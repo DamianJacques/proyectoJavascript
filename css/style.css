@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+
+/******************Header*********************/
+
+header .titulo{
+    padding: 50px;
+    font-size: 40px;
+    display: flex;
+    justify-content:  center;
+    background-color: aqua;
+}
+/***********main*****************/
+
+body{
+    background-color: antiquewhite;
+}
+
+.main{
+    font-size: 30px;
+    padding: 50px;
+    display: flex;
+    width: 75%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.monto{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.desde{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.alamoneda{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.texto4{
+    padding: 50px;
+    
+}
+
+.total{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+p.texto1 {
+     margin-right: 10px;
+}
+p.texto2{
+    margin-right: 10px;
+}
+p.texto3{
+    margin-right: 10px;
+}
+p.resultado{
+    margin-right: 10px;
+    
+}
+
+.historial{
+    display: flex;
+    flex-direction: column;
+
+}
+

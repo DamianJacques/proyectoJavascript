@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Convertidor de monedas</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo">Convertidor de monedas</h1>
+    </header>
+
+  
+  <main>
+    <div class="main">
+      <section class="monto">
+        <p class="texto1">Monto</p>
+        <input type="number" id="montoInput" />
+      </section>
+
+      <section class="desde">
+        <p class="texto2">Desde la moneda</p>
+          <select name="moneda1" id="monedaInput">
+          <option value="dolar1">Dolar</option>
+          <option value="real1" >Real</option>
+          <option value="peso1">Peso</option>
+        </select>
+      </section>
+
+      <section class="alamoneda">
+        <p class="texto3">A la moneda</p>
+       <select name="moneda2" id="monedaOutput">
+          <option value="peso2">Peso</option>
+          <option value="real2">Real</option>
+          <option value="dolar2">Dolar</option>
+        </select>
+      </section>
+
+      <section class="total">
+        <p class="resultado">Total</p>
+        <input type="text" />
+        <button id="boton">Calcular</button>
+      </section>
+
+      <section class="historial">
+        <p class="texto4">Historial de Transacciones</p>
+        <select name="tiempo" >
+        <option value="cincoDias">5 Dias</option>
+        <option value="diezDias">10 Dias</option>
+        <option value="veinteDias">20 Dias</option>
+    </select>
+      </section>
+            </main>
+           
+      <script src="./app.js"></script>
+    </body>
+</html>
