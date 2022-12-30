@@ -1,101 +1,121 @@
-let monto = document.getElementById("montoInput").value;
-let opcion = document.getElementById("monedaInput").value;
-let moneda = document.getElementById("monedaOutput").value;
+
+
 let boton = document.getElementById("boton");
 
 let dolar1 = 0;
 let euro1 = 0;
 let real1 = 0;
+let pesoReal = 0;
+let pesoDolar = 0;
+let realDolar = 0;
+
 
 function monedas(nombre, valor){
     this.nombre = nombre;
     this.valor = valor;
 }
 
+
+const dolarApeso = new monedas("Dolar", 166.97);
+const dolarAreal = new monedas("Dolarr", 5.29)
+const realApeso = new monedas("Real", 31.68);
+const pesoAreal = new monedas("Pesor", 0.032);
+const pesoAdolar = new monedas("Pesod", 0.0166);
+const realAdolar = new monedas("Reald", 0.19);
+
+  
+ 
+
+
+const calculaDolarApeso = function (a, b){
+    return (a*b);
+}
+
+const calculaDolarAreal = function (a, b){
+    return (a*b);
+}
+
+
+const calculaEuroApeso = function (a, b){
+    return (a*b);
+}
+
+const calculaEuroAreal = function (a, b){
+    return (a*b);
+}
+
+const calculaRealApeso = function (a, b){
+    return (a*b);
+}
+
+const calculaRealdolar = function (a, b){
+    return (a*b);
+}
+
+
+
+
 function conversion(){
-    console.log("Hola");
-
-}
-
-const dolar = new monedas("Dolar", 166.97);
-const euro = new monedas("Euro", 172.52);
-const real = new monedas("Real", 31.68);
-
-
-const calculaDolar = function (a, b){
-    return (a*b);
-}
-
-
-const calculaEuro = function (a, b){
-    return (a*b);
-}
-
-
-const calculaReal = function (a, b){
-    return (a*b);
-}
-
-const resultado = [];
-
-
-if (opcion == real1){
-    boton.addEventListener("click", conversion);
-/*switch(moneda){
-    case peso2:
-        dolar1 = calculaDolar(monto, dolar.valor);
-        let dolar2 = 0;
-        dolar2 = dolar1.toFixed(2);
-        resultado.push(dolar2);
-        boton.addEventListener("click", conversion);
-        break;
-    case 2:
-        euro1 = calculaEuro(monto, euro.valor);
-        let euro2 = 0;
-        euro2 = euro1.toFixed(2);
-        resultado.push(euro2);
-        break;
-     
-    case 3:
-        //real = monto * 31.68
-        real1 = calculaReal(monto, real.valor);
-        let real2 = 0;
-        real2 = real1.toFixed(2);
-        resultado.push(real2);
-        //alert ("El monto es "+ real2 +" Pesos");
-        break;
-    default:
-        //alert ("La opcion seleccionada no e sta en la lista");
-        break;   
-
-}
-}
-else if (opcion == 2){
-    switch(moneda){
-        case 1:
-            dolar = monto / 166.97;
+    event.preventDefault();
+    const resultado = [];
+    const monto = document.getElementById("montoInput").value;
+    const valor = document.getElementById("monedaInput");
+    const opcion = valor.value;
+    const moneda = document.getElementById("monedaOutput").value;
+    if (opcion == "dolar1"){
+       switch(moneda){
+        case "peso2":
+            dolar1 = calculaDolarApeso(monto, dolarApeso.valor);
             let dolar2 = 0;
-            dolar2 = dolar.toFixed(2);
-            //alert ("El monto es "+ dolar2 +" Dolares");
+            dolar2 = dolar1.toFixed(2);
+            resultado.push(dolar2);
+            document.getElementById("total").innerHTML = dolar2
             break;
-        case 2:
-            euro = monto / 172.52;
-            let euro2 = 0;
-            euro2 = euro.toFixed(2);
-            //alert ("El monto es "+ euro2 +" Euros");
+        case "dolar2":
+            alert("La moneda es la misma, por favor elija una moneda diferente");
             break;
-         
-        case 3:
-            real = monto / 31.68
+        case "real2":
+            real = calculaDolarAreal(monto, dolarAreal.valor);
             let real2 = 0;
             real2 = real.toFixed(2);
-            //alert ("El monto es "+ real2 +" Reales");
+            resultado.push(real2);
+            document.getElementById("total").innerHTML = real2
             break;
-        default:
-            //alert ("La opcion seleccionada no e sta en la lista");
-            break;   
+    }
+    }else if(opcion == "real1"){
+        switch(moneda){
+        case "peso2":
+            real1 = calculaRealApeso(monto, realApeso.valor);
+            let realp = 0;
+            realp = real1.toFixed(2);
+            resultado.push(realp);
+            document.getElementById("total").innerHTML = realp
+                break;
+        case "real2":
+                alert("La moneda es la misma, por favor elija una moneda diferente");
+                break;
+        case "dolar2":
+            alert("Real a Dolar");
+            break;
+        }
+        
+    }else if(opcion == "peso1"){
+        switch(moneda){
+        case "peso2":
+            alert("La moneda es la misma, por favor elija una moneda diferente");
+                break;
+        case "real2":
+             alert("Peso a Real");
+                break;
+        case "dolar2":
+            alert("Peso a Dolar");
+            break;
+        }    
+    }else{
+        alert("chau");
+    }
 }
-*/
-}else{
-    //alert("Debe elegir opcion 1 o 2 en el primer menu");
-}
+
+boton.addEventListener("click", conversion);
+
+

@@ -12,48 +12,53 @@
       <h1 class="titulo">Convertidor de monedas</h1>
     </header>
 
-  
-  <main>
-    <div class="main">
-      <section class="monto">
-        <p class="texto1">Monto</p>
-        <input type="number" id="montoInput" />
-      </section>
+    <main>
+      <div class="main">
+        <form onsubmit="conversion()">
+          <section class="monto">
+            <p class="texto1">Monto</p>
+            <input type="number" id="montoInput" />
+          </section>
 
-      <section class="desde">
-        <p class="texto2">Desde la moneda</p>
-          <select name="moneda1" id="monedaInput">
-          <option value="dolar1">Dolar</option>
-          <option value="real1" >Real</option>
-          <option value="peso1">Peso</option>
-        </select>
-      </section>
+          <section class="desde">
+            <p class="texto2">Desde la moneda</p>
 
-      <section class="alamoneda">
-        <p class="texto3">A la moneda</p>
-       <select name="moneda2" id="monedaOutput">
-          <option value="peso2">Peso</option>
-          <option value="real2">Real</option>
-          <option value="dolar2">Dolar</option>
-        </select>
-      </section>
+            <select name="moneda1" id="monedaInput">
+              <option selected>Seleccione una moneda</option>
+              <option value="dolar1">Dolar</option>
+              <option value="real1">Real</option>
+              <option value="peso1">Peso</option>
+            </select>
+          </section>
 
-      <section class="total">
-        <p class="resultado">Total</p>
-        <input type="text" />
-        <button id="boton">Calcular</button>
-      </section>
+          <section class="alamoneda">
+            <p class="texto3">A la moneda</p>
+            <select name="moneda2" id="monedaOutput">
+              <option selected>Seleccione una moneda</option>
+              <option value="peso2">Peso</option>
+              <option value="real2">Real</option>
+              <option value="dolar2">Dolar</option>
+            </select>
+          </section>
 
-      <section class="historial">
-        <p class="texto4">Historial de Transacciones</p>
-        <select name="tiempo" >
-        <option value="cincoDias">5 Dias</option>
-        <option value="diezDias">10 Dias</option>
-        <option value="veinteDias">20 Dias</option>
-    </select>
-      </section>
-            </main>
-           
-      <script src="./app.js"></script>
-    </body>
+          <div class="total">
+            <p class="resultado">Total</p>
+            <span class = "total2" id="total"></span>
+            <button id="boton">Calcular</button>
+          </div>
+
+          <section class="historial">
+            <p class="texto4">Historial de Transacciones</p>
+            <select name="tiempo">
+              <option value="cinco">Ultimas 5 Transacciones</option>
+              <option value="diez">Ultimas 10 Transacciones</option>
+              <option value="veinte">Ultimas 20 Transacciones</option>
+            </select>
+          </section>
+        </form>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
