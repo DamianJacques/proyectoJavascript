@@ -23,7 +23,6 @@ body{
     font-size: 30px;
     padding: 50px;
     display: flex;
-    width: 75%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -78,10 +77,33 @@ p.resultado{
     margin-right: 10px;
     
 }
+.texto4{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+
 
 .historial{
+    width: 400px;
+
+}
+.divHistorial{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+.mostrar{
+    background-color: aqua;
+    display: flex;
+    font-size: 20px;
+    width: 600px;
+    padding: 30px;
+   justify-content: space-between;
+    
 }
 

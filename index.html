@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Convertidor de monedas</title>
   </head>
@@ -14,10 +18,10 @@
 
     <main>
       <div class="main">
-        <form onsubmit="conversion()">
+        <form id="formulario" onsubmit="conversion()">
           <section class="monto">
             <p class="texto1">Monto</p>
-            <input type="number" id="montoInput" />
+            <input type="number" id="montoInput" name="nontoInput"  />
           </section>
 
           <section class="desde">
@@ -25,9 +29,9 @@
 
             <select name="moneda1" id="monedaInput">
               <option selected>Seleccione una moneda</option>
-              <option value="dolar1">Dolar</option>
-              <option value="real1">Real</option>
-              <option value="peso1">Peso</option>
+              <option value="dolar">Dolar</option>
+              <option value="real">Real</option>|
+              <option value="peso">Peso</option>
             </select>
           </section>
 
@@ -35,30 +39,39 @@
             <p class="texto3">A la moneda</p>
             <select name="moneda2" id="monedaOutput">
               <option selected>Seleccione una moneda</option>
-              <option value="peso2">Peso</option>
-              <option value="real2">Real</option>
-              <option value="dolar2">Dolar</option>
+              <option value="peso">Peso</option>
+              <option value="real">Real</option>
+              <option value="dolar">Dolar</option>
             </select>
           </section>
 
           <div class="total">
             <p class="resultado">Total</p>
-            <span class = "total2" id="total"></span>
-            <button id="boton">Calcular</button>
+            <span class="total2" id="total"></span>
+            <button id="botonCalcular">Calcular</button>
           </div>
-
+        </div>
+        <div class="divHistorial">
           <section class="historial">
-            <p class="texto4">Historial de Transacciones</p>
-            <select name="tiempo">
-              <option value="cinco">Ultimas 5 Transacciones</option>
-              <option value="diez">Ultimas 10 Transacciones</option>
-              <option value="veinte">Ultimas 20 Transacciones</option>
+            <h2 class="texto4">Historial de Transacciones</h2>
+            <select name="tiempo" id="tiempo">
+              <option id= "ultimas5" value="cinco">Ultimas 5 Transacciones</option>
+              <option id="ultimas10" value="diez">Ultimas 10 Transacciones</option>
+              <option id="ultimas20" value="veinte">Ultimas 20 Transacciones</option>
             </select>
+            <button id="botonMostrar">Mostrar</button>
           </section>
+          <div class="mostrar">
+          <p id="montoHistorial">Monto</p>
+          <p id="monedaInicial">Moneda Inicial</p>
+          <p id="monedaDestino">Moneda Destino</p>
+          <p id="resultadoHistorial">Resultado</p>
+          </div>
+        </div>
         </form>
-      </div>
+     
     </main>
-
-    <script src="./app.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="./app.js"></script>
   </body>
 </html>
