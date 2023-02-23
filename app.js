@@ -161,6 +161,42 @@ function conversion() {
 botonCalcular.addEventListener("click", conversion);
 
 let botonMostrar = document.getElementById("botonMostrar");
+let botonLimpiar = document.getElementById("botonLimpiar");
+let botonMostrarUsuarios = document.getElementById("mostrarUsuarios");
+
+
+
+function limpiar(){
+
+  
+ const limpiarMostrar = document.querySelector(".mostrar1");
+ limpiarMostrar.remove();
+
+}
+
+function mostrarUsuarios(){
+  
+  const usuarios = document.querySelector(".usuarios");
+  
+ fetch("data.json")
+ .then(Response => Response.json())
+ .then(data => {
+  data.forEach(usuario => {
+    const li = document.createElement("li");
+    
+  li.innerHTML = `
+      <h2>${usuario.nombre}</h2> 
+      <h3>${usuario.edad}</h3>
+      <h4>${usuario.mail}</h4>
+   `;
+
+  usuarios.append(li);
+  
+ });
+  
+ });
+ 
+}
 
 
 
@@ -178,13 +214,15 @@ function recorrerHistorial(historial) {
     monedaDestino.innerText = historial[i].moneda2;
     resultado.innerText = historial[i].resultado;
 
-    fila.classList.add("mostrar");
+    fila.classList.add("mostrar1");
     fila.appendChild(monto);
     fila.appendChild(monedaInicial);
     fila.appendChild(monedaDestino);
     fila.appendChild(resultado);
 
     document.querySelector(".divHistorial").appendChild(fila);
+
+   
   }
 }
 
@@ -202,6 +240,7 @@ function mostrarHistorial() {
     case "diez":
       let arrayUltimosDiez = arrayStorage.slice(-10);
       recorrerHistorial(arrayUltimosDiez);
+      
       break;
     case "veinte":
       let arrayUltimosVeinte = arrayStorage.slice(-20);
@@ -210,5 +249,10 @@ function mostrarHistorial() {
     default:
       break;
   }
-}
+} 
+
+
 botonMostrar.addEventListener("click", mostrarHistorial);
+botonLimpiar.addEventListener("click", limpiar);
+botonMostrarUsuarios.addEventListener("click", mostrarUsuarios);
+
